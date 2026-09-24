@@ -1,0 +1,41 @@
+{
+  "name": "D_yolo26s_notile",
+  "model": "yolo26s.pt",
+  "pretrained": null,
+  "imgsz": 640,
+  "tile": false,
+  "epochs": 150,
+  "patience": 50,
+  "batch": 16,
+  "fraction": 1.0,
+  "all_data": false,
+  "out_dir": "yolo_dataset_v2",
+  "train_hyperparams": {
+    "hsv_h": 0.0,
+    "hsv_s": 0.0,
+    "hsv_v": 0.2,
+    "degrees": 0.0,
+    "shear": 0.0,
+    "perspective": 0.0,
+    "translate": 0.0,
+    "scale": 0.05,
+    "flipud": 0.5,
+    "fliplr": 0.0,
+    "mosaic": 0.0,
+    "mixup": 0.0,
+    "erasing": 0.0
+  },
+  "augmentations_repr": [
+    "GaussNoise(p=0.4, mean_range=(0.0, 0.0), noise_scale_factor=1.0, per_channel=False, std_range=(0.02, 0.1))",
+    "Affine(p=0.4, balanced_scale=False, border_mode=0, fill=(27.0, 27.0, 27.0), fill_mask=0.0, fit_output=False, interpolation=1, keep_ratio=False, mask_interpolation=0, rotate=(0.0, 0.0), rotate_method='largest_box', scale={'x': (1.0, 1.0), 'y': (1.0, 1.0)}, shear={'x': (0.0, 0.0), 'y': (0.0, 0.0)}, translate_percent={'x': (-0.08, 0.08), 'y': (0.0, 0.0)}, translate_px=None)",
+    "Lambda(name='frequency_axis_blur', image=<function _frequency_axis_blur at 0xf4b0736e02c0>, mask=<function noop at 0xf4b072f46200>, keypoints=<function noop at 0xf4b072f46200>, bboxes=<function noop at 0xf4b072f46200>, p=0.3)",
+    "Lambda(name='time_axis_blur', image=<function _time_axis_blur at 0xf4b0736e0a40>, mask=<function noop at 0xf4b072f46200>, keypoints=<function noop at 0xf4b072f46200>, bboxes=<function noop at 0xf4b072f46200>, p=0.15)",
+    "Lambda(name='frequency_axis_downscale', image=<function _frequency_axis_downscale at 0xf4b0736e0ae0>, mask=<function noop at 0xf4b072f46200>, keypoints=<function noop at 0xf4b072f46200>, bboxes=<function noop at 0xf4b072f46200>, p=0.3)"
+  ],
+  "split_json": "yolo_dataset_v2/split.json",
+  "split_json_sha256": "cf7baaefa1337daf2e35cda36543ca4d0e1b5c26faf33716dc9c2f1d37f40067",
+  "transferred_weights_log": null,
+  "ultralytics_version": "8.4.126",
+  "torch_version": "2.13.0+cu130",
+  "cuda_available": true
+}
